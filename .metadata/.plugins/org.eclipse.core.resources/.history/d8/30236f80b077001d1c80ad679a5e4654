@@ -1,0 +1,26 @@
+package Student;
+
+public class priSchool extends Student{
+	
+	@Override
+	boolean stageUp() {
+		// TODO Auto-generated method stub
+		final int getS = this.getStage();
+		if (getS < 6) {
+			this.setStage(1+getS);
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	boolean stageOver(int year) {
+		// TODO Auto-generated method stub
+		if (year >= 6) {
+//			it should pass to new/higher school
+			return true;
+		}
+		return false;
+	}
+	
+}

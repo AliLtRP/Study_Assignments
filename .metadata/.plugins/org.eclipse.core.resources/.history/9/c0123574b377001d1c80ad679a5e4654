@@ -1,0 +1,39 @@
+package Student;
+
+import java.util.ArrayList;
+
+public class priSchool extends Student{
+	
+	final ArrayList<String> arrayPri = new ArrayList();
+	
+	@Override
+	boolean stageUp() {
+		// TODO Auto-generated method stub
+		final int getS = this.getStage();
+		if (getS < 6) {
+			this.setStage(1+getS);
+			return true;
+		} else if(getS == 6) {
+			this.stageOver(getS);
+		}
+		return false;
+	}
+
+	@Override
+	boolean stageOver(int year) {
+		// TODO Auto-generated method stub
+		if (year >= 6) {
+//			it should pass to new/higher school
+			
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	void setName(String name) {
+		// TODO Auto-generated method stub
+		this.
+	}
+	
+}

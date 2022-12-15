@@ -1,0 +1,72 @@
+package Student;
+
+import java.util.ArrayList;
+
+public class uni extends Student{
+	private String uniName, collageName, depName;
+	public static ArrayList<String> arrayUni = new ArrayList<>();
+	
+	public String getUniName() {
+		return uniName;
+	}
+
+	public void setUniName(String uniName) {
+		this.uniName = uniName;
+	}
+
+	public String getCollageName() {
+		return collageName;
+	}
+
+	public void setCollageName(String collageName) {
+		this.collageName = collageName;
+	}
+
+	public String getDepName() {
+		return depName;
+	}
+
+	public void setDepName(String depName) {
+		this.depName = depName;
+	}
+
+	@Override
+	boolean stageUp() {
+		// TODO Auto-generated method stub
+		final int getS = this.getStage();
+		if (getS < 4) {
+			this.setStage(1+getS);
+			return true;
+		} else if(getS == 4) {
+			this.stageOver(getS);
+		}
+		return false;
+	}
+
+	@Override
+	boolean stageOver(int year) {
+		// TODO Auto-generated method stub
+		if (year < 4) {
+			this.setStage(this.getStage()+1);
+			return true;
+		} else {
+			System.out.println("congrates the gradoition !");
+			
+			for (int i=0; i <arrayUni.size(); i++) {
+				if ( arrayUni.get(i) == this.name) {
+					arrayUni.get(i) = "d" ;
+				}
+			}
+			return false;
+		}
+		
+	}
+
+	@Override
+	void setName(String name) {
+		// TODO Auto-generated method stub
+		arrayUni.add(name);
+		this.name = name;
+	}
+	
+}

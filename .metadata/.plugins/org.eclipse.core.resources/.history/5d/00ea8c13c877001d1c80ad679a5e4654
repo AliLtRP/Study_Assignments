@@ -1,0 +1,22 @@
+package Student;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		priSchool p = new priSchool();
+		secSchool s = new secSchool();
+		highSchool h = new highSchool();
+		uni u = new uni();
+		
+		h.setName("ali");
+		h.setStage(2);
+		h.stageUp();
+		System.out.println(h.getName());
+		System.out.println(h.getStage());
+		System.out.println(h.arrayHigh);
+		
+		System.out.println(u.arrayUni);
+	}
+
+}

@@ -1,0 +1,67 @@
+package scoreboard;
+
+import java.util.Scanner;
+
+public class Scoreboard {
+	private int numEntries = 0;
+	private GameEntry[] board;
+	
+	public Scoreboard(int capacity) {
+		board = new GameEntry[capacity];
+	}
+		
+	public void add(GameEntry e) {
+		int newScore = e.getScore();
+		// Check if new game entry is qualified
+		if (numEntries < board.length || newScore > board[numEntries-1].getScore()) {
+			if (numEntries< board.length) numEntries ++; //check if scoreboard is not full
+			//shift all entries less than new entry
+			int j = numEntries-1;
+			while (j>0 && newScore > board[j-1].getScore()) {
+				board[j]=board[j-1];
+				j--;
+			}
+			//add new entry 
+			board[j]=e;
+		}
+	}
+	public String toString() {
+		String output="Scoarboard:\n";
+		for (int i=0; i<numEntries; i++)
+			output += board[i].toString() + "\n"; 
+		return output;
+	}
+	
+	public GameEntry remove(int i) throws IndexOutOfBoundsException{
+		if (i<0 || i> numEntries) throw new IndexOutOfBoundsException("Error");
+		GameEntry temp = board[i];
+		for (int j=i; j<numEntries-1; j++) 
+			board[j]=board[j+1];
+		board[numEntries-1]=null;
+		numEntries --;
+		return temp;
+	
+		
+	}
+	
+	public void Play() {
+		int len = board.length;
+		
+		int i =0;
+		
+		while(true) {
+			System.out.println("choose number");
+			
+			Scanner in = new Scanner(System.in);
+			
+			System.out.println(board[i]);
+			
+			if (i >= board.length) {
+				break;
+			}
+		}
+	}
+	
+
+}
+

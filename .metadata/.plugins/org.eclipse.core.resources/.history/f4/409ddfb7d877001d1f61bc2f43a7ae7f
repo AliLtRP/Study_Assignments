@@ -1,0 +1,47 @@
+package Student;
+
+import java.util.ArrayList;
+
+public class highSchool extends Student{
+	
+	public static ArrayList<String> arrayHigh = new ArrayList<>();
+	
+	@Override
+	void setName(String name) {
+		// TODO Auto-generated method stub
+		arrayHigh.add(name);
+		this.name = name;
+	}
+
+	@Override
+	boolean stageUp() {
+		// TODO Auto-generated method stub
+		final int getS = this.getStage();
+		if (getS < 3) {
+			this.setStage(1+getS);
+			return true;
+		} else if(getS == 3) {
+			this.stageOver(getS);
+		}
+		return false;
+	}
+
+	@Override
+	boolean stageOver(int year) {
+		// TODO Auto-generated method stub
+//		secSchool.arraySec.add(this.getName());
+		if (year >= 3) {
+			uni.arrayUni.add(this.getName());
+			for (int i=0; i <arrayHigh.size(); i++) {
+				if ( arrayHigh.get(i) == this.name) {
+					arrayHigh.set(i, null);
+				}
+			}
+			this.name = null;
+			this.stage =0;
+			return true;
+		}
+		return false;
+	}
+	
+}

@@ -1,0 +1,21 @@
+package Student;
+
+public class priSchool extends Student{
+	
+	@Override
+	boolean stageUp(int year) {
+		// TODO Auto-generated method stub
+		if (year < 6) {
+			this.setStage(++year);
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	boolean stageOver(int year) {
+		// TODO Auto-generated method stub
+		return (year >);
+	}
+	
+}

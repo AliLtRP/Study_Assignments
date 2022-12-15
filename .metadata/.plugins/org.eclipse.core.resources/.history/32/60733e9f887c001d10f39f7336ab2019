@@ -1,0 +1,18 @@
+package scoreboard;
+
+public class Main {
+	public static void main(String[] args) {
+		Scoreboard scoreboard = new Scoreboard(10);
+		System.out.println(scoreboard.toString());
+		GameEntry g1 = new GameEntry("Team1",70);
+		scoreboard.add(g1);
+		System.out.println(scoreboard.toString());
+		GameEntry g2 = new GameEntry("Team2",80);
+		scoreboard.add(g2);
+		System.out.println(scoreboard.toString());
+		GameEntry g3 = scoreboard.remove(1);
+		System.out.println(scoreboard.toString());
+		
+
+	}
+}

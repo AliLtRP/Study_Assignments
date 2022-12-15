@@ -1,0 +1,14 @@
+package teitactoe;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		TicTacToe t = new TicTacToe();
+		t.putMark(0, 0);
+		
+		t.putMark(1, 1);
+		System.out.println(t.print());
+	}
+
+}

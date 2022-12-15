@@ -1,0 +1,27 @@
+package Student;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		priSchool p ;
+		secSchool s ;
+		highSchool h = new highSchool();
+		uni u = new uni();
+		
+		priSchool[] arr = new priSchool[3];
+		arr[0] = new priSchool("ali", 3);
+		arr[1] = new priSchool("ahmed", 6);
+		arr[2] = new priSchool("hadi", 4);
+		
+		for (int i=0; i<arr.length; i++) {
+			arr[i].stageUp();
+			System.out.println(arr[i].name);
+			System.out.println(arr[i].stage);
+			
+//			arr[i]
+		}
+		System.out.println();
+	}
+
+}
