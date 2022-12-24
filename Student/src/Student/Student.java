@@ -1,0 +1,26 @@
+package Student;
+
+abstract class Student {
+	protected String name;
+	protected int stage;
+	
+	public String getName() {
+		return name;
+	}
+	
+	abstract void setName(String name);
+	
+	public int getStage() {
+		return stage;
+	}
+	
+	public void setStage(int stage) {
+		this.stage = stage;
+	}
+	
+	abstract boolean stageUp();
+	
+//	pass the student to new school
+	abstract boolean stageOver(int year);
+	
+}
